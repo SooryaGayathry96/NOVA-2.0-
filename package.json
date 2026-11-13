@@ -3,16 +3,23 @@
   "version": "1.0.0",
   "description": "NOVA 2.O — Junior Astronaut Mission Trainer for NASA Space Apps Challenge",
   "scripts": {
-    "start": "cd server && node dist/index.js",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm run dev",
-    "build:client": "cd client && npm run build",
-    "build:server": "cd server && npm run build",
-    "build": "cd client && npm run build && cd ../server && npm run build"
+    "start": "node server/dist/index.js",
+    "server": "npm run dev --workspace=server",
+    "client": "npm run dev --workspace=client",
+    "build:client": "npm run build --workspace=client",
+    "build:server": "npm run build --workspace=server",
+    "build": "npm run build:client && npm run build:server"
   },
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "author": "NOVA 2.O",
   "license": "MIT",
   "devDependencies": {
     "isomorphic-git": "^1.44.13"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node@^4.68.3"
   }
 }
