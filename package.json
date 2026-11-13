@@ -1,0 +1,18 @@
+{
+  "name": "junior-astronaut-mission-trainer",
+  "version": "1.0.0",
+  "description": "NOVA 2.O — Junior Astronaut Mission Trainer for NASA Space Apps Challenge",
+  "scripts": {
+    "start": "cd server && node dist/index.js",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "build": "cd client && npm run build && cd ../server && npm run build"
+  },
+  "author": "NOVA 2.O",
+  "license": "MIT",
+  "devDependencies": {
+    "isomorphic-git": "^1.44.13"
+  }
+}
